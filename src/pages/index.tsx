@@ -1,7 +1,13 @@
+import { styled } from '@/styles';
+
 export default function Home() {
   return (
     <>
-      <h1>Eduardo Sousa</h1>
+      <Button>Eduardo Sousa</Button>
     </>
   );
 }
+
+const Button = styled('button', {
+  backgroundColor: '$green300',
+});
