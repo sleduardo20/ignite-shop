@@ -17,6 +17,7 @@
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "keen-slider": "^6.8.5",
     "next": "13.2.4",
     "prettier": "^2.8.6",
     "react": "18.2.0",
