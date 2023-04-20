@@ -43,7 +43,7 @@ export default function Product({ product }: ProductProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  /* const response = await stripe.products.list({
+  const response = await stripe.products.list({
     expand: ['data.default_price'],
   });
 
@@ -51,10 +51,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: {
       id: product.id,
     },
-  })); */
+  }));
 
   return {
-    paths: [],
+    paths,
     fallback: true,
   };
 };
