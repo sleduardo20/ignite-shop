@@ -6,6 +6,7 @@ import { useKeenSlider } from 'keen-slider/react';
 import { stripe } from '@/lib/stripe';
 import Stripe from 'stripe';
 import Link from 'next/link';
+import Head from 'next/head';
 
 interface HomeProps {
   products: {
@@ -25,29 +26,34 @@ export default function Home({ products }: HomeProps) {
   });
 
   return (
-    <HomeContainer ref={sliderRef} className="keen-slider">
-      {products.map((product) => (
-        <Link
-          key={product.id}
-          href={`product/${product.id}`}
-          className="keen-slider__slide"
-          prefetch={false}
-        >
-          <Product>
-            <Image
-              src={product.imageUrl}
-              width={520}
-              height={480}
-              alt={product.name}
-            />
-            <footer>
-              <strong>{product.name}</strong>
-              <span>{product.price}</span>
-            </footer>
-          </Product>
-        </Link>
-      ))}
-    </HomeContainer>
+    <>
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
+      <HomeContainer ref={sliderRef} className="keen-slider">
+        {products.map((product) => (
+          <Link
+            key={product.id}
+            href={`product/${product.id}`}
+            className="keen-slider__slide"
+            prefetch={false}
+          >
+            <Product>
+              <Image
+                src={product.imageUrl}
+                width={520}
+                height={480}
+                alt={product.name}
+              />
+              <footer>
+                <strong>{product.name}</strong>
+                <span>{product.price}</span>
+              </footer>
+            </Product>
+          </Link>
+        ))}
+      </HomeContainer>
+    </>
   );
 }
 
